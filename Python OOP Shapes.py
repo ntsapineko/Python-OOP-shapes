@@ -64,14 +64,18 @@ class Rhombus(Shape):
         if self.size <= 0:
             print("Size must be a positive integer.")
             return
-
         for i in range(self.size):
             spaces_in = " " * (self.size - i - 1)
-            stars = "*" + " " * (2 * i - 1)
+            stars = "*" * (2 * i - 1)
             if i == 0:
                 print(spaces_in + "*")
             else:
                 print(spaces_in + stars + "*")
+
+        for i in range(self.size - 1, 0, -1):
+            stars = "*" * (2 * i - 1)
+            spaces = " " * (self.size - i)
+            print(spaces + stars)
 
 
 if __name__ == "__main__":
@@ -83,7 +87,7 @@ if __name__ == "__main__":
     tri.draw()
     print()
 
-    rhom = Rhombus(5)
+    rhom = Rhombus(8)
     rhom.draw()
     print()
 
